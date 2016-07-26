@@ -11,17 +11,23 @@
         d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel,IsDesignTimeCreatable=True}">
     <Window.Resources>
         <DataTemplate x:Key="RssItemTemplate">
-                                <Border BorderThickness="0,0,0,1" BorderBrush="DarkCyan">
-                                    <StackPanel>
-                                        <TextBlock FontSize="20" Text="{Binding Title}" Margin="0,0,0,2"></TextBlock>
-                                        <TextBlock FontSize="16" Text="{Binding Summary}" Foreground="#ffc0c0c0"></TextBlock>
-                                        <TextBlock  TextAlignment="Right"  Foreground="Green">
+            <Button Command="{Binding ItemClick}">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Border BorderThickness="0,0,0,1" BorderBrush="DarkCyan">
+                            <StackPanel>
+                                <TextBlock FontSize="20" Text="{Binding Title}" Margin="0,0,0,2"></TextBlock>
+                                <TextBlock FontSize="16" Text="{Binding Summary}" Foreground="#ffc0c0c0"></TextBlock>
+                                <TextBlock  TextAlignment="Right"  Foreground="Green">
                                             <Run Text="Posted @"></Run>
                                             <Run Text="{Binding Published}"></Run>
-                                        </TextBlock>
-                                    </StackPanel>
-                                </Border>
-                            </DataTemplate>
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <TabControl x:Name="tabControl" HorizontalAlignment="Center"  Height="350" Margin="0,0,0,85" VerticalAlignment="Center"  Width="500">

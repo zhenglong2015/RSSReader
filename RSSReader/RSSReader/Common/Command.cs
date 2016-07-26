@@ -9,25 +9,25 @@ namespace RSSReader.Common
 {
     public class Command : ICommand
     {
-        private Action<object> execute { get; set; }
-        private Func<object, bool> canExecute { get; set; }
+        private Action<object> _execute { get; set; }
+        private Func<object, bool> _canExecute { get; set; }
 
         public Command(Action<object> execute) : this(execute, p => true)
         {
-            execute = execute;
+            _execute = execute;
         }
 
         public Command(Action<object> execute, Func<object, bool> canExecute)
         {
-            execute = execute;
-            canExecute = canExecute;
+            _execute = execute;
+            _canExecute = canExecute;
         }
 
 
 
         public bool CanExecute(object parameter)
         {
-            return canExecute(parameter);
+            return _canExecute(parameter);
         }
         public event EventHandler CanExecuteChanged;
         public void OnCanExcuteChange()
@@ -38,7 +38,7 @@ namespace RSSReader.Common
 
         public void Execute(object parameter)
         {
-            execute(parameter);
+            _execute(parameter);
         }
     }
 }

@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="Common\Command.cs" />
     <Compile Include="Models\RssItem.cs" />
+    <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\ItemWin.xaml.cs">
       <DependentUpon>ItemWin.xaml</DependentUpon>

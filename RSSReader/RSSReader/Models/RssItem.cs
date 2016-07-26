@@ -1,4 +1,5 @@
 ﻿using RSSReader.Common;
+using RSSReader.Views;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,6 +10,8 @@ using System.ServiceModel.Syndication;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Navigation;
 using System.Xml;
 
 namespace RSSReader.Models
@@ -20,7 +23,16 @@ namespace RSSReader.Models
             ItemClick = new Command(p =>
             {
                 //跳转
+                //   new ItemWin().ShowDialog();窗体之间
 
+                //NavigationService.GetNavigationService(typeof(MainWin)).Navigate(new Uri("",UriKind.Relative));
+                //NavigationService.GetNavigationService(this).GoForward();//向后转
+                //NavigationService.GetNavigationService(this).GoBack();　 //向前转
+
+                NavigationWindow window = new NavigationWindow();
+                window.Source = new Uri("Views/ItemWin.xaml", UriKind.RelativeOrAbsolute);
+                window.ShowsNavigationUI = false;
+                window.ShowDialog();
             });
         }
 
@@ -47,7 +59,8 @@ namespace RSSReader.Models
                 Id = i.Id,
                 Title = i.Title.Text,
                 Summary = i.Summary.Text,
-                Published = i.PublishDate.DateTime
+                Published = i.PublishDate.DateTime,
+                Content = i.Content.ToString() ?? i.Summary.Text
             });
         }
     }
