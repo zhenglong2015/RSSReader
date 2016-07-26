@@ -28,6 +28,7 @@ namespace RSSReader.Models
                 window.NavigationService.Navigate(new Uri("Views/ItemWin.xaml", UriKind.RelativeOrAbsolute), p);
                 window.NavigationService.Navigated += NavigationService_Navigated;
                 window.ShowDialog();
+                window.Close();
             });
         }
 

@@ -63,6 +63,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\Command.cs" />
+    <Compile Include="Common\ModelBase.cs" />
+    <Compile Include="Common\NotifyPropertyChanged.cs" />
     <Compile Include="Models\RssItem.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

@@ -2,6 +2,7 @@
 // Author                  :  ZTB 
 // Create Time           :    2016/7/26 8:14:18
 // ==========================================
+using RSSReader.Common;
 using RSSReader.Models;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,14 @@ using System.Threading.Tasks;
 
 namespace RSSReader.ViewModels
 {
-    public class ItemViewModel
+    public class ItemViewModel : ModelBase
     {
-        public RssItem RItem { get; set; }
+        private RssItem rItem;
+
+        public RssItem RItem
+        {
+            get { return rItem; }
+            set { SetProperty(ref rItem, value); }
+        }
     }
 }
