@@ -26,7 +26,7 @@ namespace RSSReader.Models
                 window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 window.ShowsNavigationUI = false;
                 window.NavigationService.Navigate(new Uri("Views/ItemWin.xaml", UriKind.RelativeOrAbsolute), p);
-                window.NavigationService.LoadCompleted += NavigationService_Navigated;
+                window.NavigationService.Navigated += NavigationService_Navigated;
                 window.ShowDialog();
             });
         }
