@@ -61,7 +61,7 @@ namespace RSSReader.Models
                 Summary = i.Summary.Text,
                 Published = i.PublishDate.DateTime,
                 Content = i.Content == null ? i.Summary.Text : i.Content.ToString()
-            }).ToList();
+            });
         }
     }
 

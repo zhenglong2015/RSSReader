@@ -26,14 +26,15 @@ namespace RSSReader.Views
         public ItemWin()
         {
             ViewModel = new ItemViewModel();
-            InitializeComponent();
+            InitializeComponent();            
             this.Loaded += ItemWin_Loaded;
         }
 
         private void ItemWin_Loaded(object sender, RoutedEventArgs e)
         {
-            //ViewModel.RItem = App.Current.Properties["frame"] as RssItem;
-            ViewModel.RItem = new RssItem() { Id = "1", Content = "12312", Published = DateTime.Now, Title = "212" };
+            ViewModel.RItem = App.Current.Properties["frame"] as RssItem;
         }
+
+        
     }
 }

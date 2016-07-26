@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace RSSReader.ViewModels
 {
-    public class ItemViewModel 
+    public class ItemViewModel
     {
         public RssItem RItem { get; set; }
     }
