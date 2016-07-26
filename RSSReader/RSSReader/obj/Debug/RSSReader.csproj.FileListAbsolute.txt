@@ -1,7 +1,6 @@
 E:\测试\Rss\RSSReader\RSSReader\bin\Debug\RSSReader.exe.config
 E:\测试\Rss\RSSReader\RSSReader\bin\Debug\RSSReader.exe
 E:\测试\Rss\RSSReader\RSSReader\bin\Debug\RSSReader.pdb
-E:\测试\Rss\RSSReader\RSSReader\obj\Debug\RSSReader.csprojResolveAssemblyReference.cache
 E:\测试\Rss\RSSReader\RSSReader\obj\Debug\Views\ItemWin.g.cs
 E:\测试\Rss\RSSReader\RSSReader\obj\Debug\Views\MainWin.g.cs
 E:\测试\Rss\RSSReader\RSSReader\obj\Debug\App.g.cs
@@ -14,5 +13,4 @@ E:\测试\Rss\RSSReader\RSSReader\obj\Debug\RSSReader.Properties.Resources.resou
 E:\测试\Rss\RSSReader\RSSReader\obj\Debug\RSSReader.csproj.GenerateResource.Cache
 E:\测试\Rss\RSSReader\RSSReader\obj\Debug\RSSReader.exe
 E:\测试\Rss\RSSReader\RSSReader\obj\Debug\RSSReader.pdb
-E:\测试\Rss\RSSReader\RSSReader\obj\Debug\Views\UserControl1.g.cs
-E:\测试\Rss\RSSReader\RSSReader\obj\Debug\Views\UserControl1.baml
+E:\测试\Rss\RSSReader\RSSReader\obj\Debug\RSSReader.csprojResolveAssemblyReference.cache

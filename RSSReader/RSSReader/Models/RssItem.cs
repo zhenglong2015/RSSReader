@@ -22,18 +22,18 @@ namespace RSSReader.Models
         {
             ItemClick = new Command(p =>
             {
-                //跳转
-                //   new ItemWin().ShowDialog();窗体之间
-
-                //NavigationService.GetNavigationService(typeof(MainWin)).Navigate(new Uri("",UriKind.Relative));
-                //NavigationService.GetNavigationService(this).GoForward();//向后转
-                //NavigationService.GetNavigationService(this).GoBack();　 //向前转
-
                 NavigationWindow window = new NavigationWindow();
-                window.Source = new Uri("Views/ItemWin.xaml", UriKind.RelativeOrAbsolute);
+                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 window.ShowsNavigationUI = false;
+                window.NavigationService.Navigate(new Uri("Views/ItemWin.xaml", UriKind.RelativeOrAbsolute), p);
+                window.NavigationService.LoadCompleted += NavigationService_Navigated;
                 window.ShowDialog();
             });
+        }
+
+        private void NavigationService_Navigated(object sender, NavigationEventArgs e)
+        {
+            App.Current.Properties["frame"] = e.ExtraData;
         }
 
         public string Id { get; set; }
@@ -60,8 +60,8 @@ namespace RSSReader.Models
                 Title = i.Title.Text,
                 Summary = i.Summary.Text,
                 Published = i.PublishDate.DateTime,
-                Content = i.Content.ToString() ?? i.Summary.Text
-            });
+                Content = i.Content == null ? i.Summary.Text : i.Content.ToString()
+            }).ToList();
         }
     }
 

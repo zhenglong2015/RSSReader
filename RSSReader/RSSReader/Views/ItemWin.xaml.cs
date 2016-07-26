@@ -1,4 +1,5 @@
-﻿using RSSReader.ViewModels;
+﻿using RSSReader.Models;
+using RSSReader.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,13 @@ namespace RSSReader.Views
         {
             ViewModel = new ItemViewModel();
             InitializeComponent();
+            this.Loaded += ItemWin_Loaded;
+        }
+
+        private void ItemWin_Loaded(object sender, RoutedEventArgs e)
+        {
+            //ViewModel.RItem = App.Current.Properties["frame"] as RssItem;
+            ViewModel.RItem = new RssItem() { Id = "1", Content = "12312", Published = DateTime.Now, Title = "212" };
         }
     }
 }

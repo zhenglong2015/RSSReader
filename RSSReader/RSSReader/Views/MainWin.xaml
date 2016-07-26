@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RSSReader.Views"
         mc:Ignorable="d"
         xmlns:viewModels="clr-namespace:RSSReader.ViewModels"
-        Title="MainWin" Height="500" Width="500"
+        Title="MainWin"
         DataContext="{Binding ViewModel,RelativeSource={RelativeSource Mode=Self}}"
         d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel,IsDesignTimeCreatable=True}">
     <Window.Resources>
@@ -29,8 +29,8 @@
             </Button>
         </DataTemplate>
     </Window.Resources>
-    <Grid>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Center"  Height="350" Margin="0,0,0,85" VerticalAlignment="Center"  Width="500">
+    <WrapPanel>
+        <TabControl x:Name="tabControl">
             <TabItem Header="首页">
                 <Grid>
                     <ListView ItemsSource="{Binding HomeList}" ItemTemplate="{StaticResource ResourceKey=RssItemTemplate}">
@@ -53,6 +53,5 @@
                 </Grid>
             </TabItem>
         </TabControl>
-
-    </Grid>
+    </WrapPanel>
 </Window>

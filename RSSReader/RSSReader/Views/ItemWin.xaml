@@ -7,9 +7,10 @@
       mc:Ignorable="d" 
          xmlns:viewModels="clr-namespace:RSSReader.ViewModels"
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="ItemWin"
+      Title="ItemWin"   
       DataContext="{Binding ViewModel,RelativeSource={RelativeSource Mode=Self}}" 
        d:DataContext="{d:DesignInstance Type=viewModels:ItemViewModel,IsDesignTimeCreatable=True}">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
