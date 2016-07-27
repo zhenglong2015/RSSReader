@@ -21,5 +21,6 @@ namespace RSSReader.ViewModels
             get { return rItem; }
             set { SetProperty(ref rItem, value); }
         }
+        
     }
 }

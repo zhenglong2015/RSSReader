@@ -26,15 +26,19 @@ namespace RSSReader.Views
         public ItemWin()
         {
             ViewModel = new ItemViewModel();
-            InitializeComponent();            
+            InitializeComponent();
             this.Loaded += ItemWin_Loaded;
         }
-
+        /// <summary>
+        /// 获取导航页传递过来的参数
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ItemWin_Loaded(object sender, RoutedEventArgs e)
         {
             ViewModel.RItem = App.Current.Properties["frame"] as RssItem;
         }
 
-        
+
     }
 }

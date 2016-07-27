@@ -7,17 +7,17 @@ using System.Windows.Input;
 
 namespace RSSReader.Common
 {
-    public class Command : ICommand
+    public class DelegateCommand : ICommand
     {
         private Action<object> _execute { get; set; }
         private Func<object, bool> _canExecute { get; set; }
 
-        public Command(Action<object> execute) : this(execute, p => true)
+        public DelegateCommand(Action<object> execute) : this(execute, p => true)
         {
             _execute = execute;
         }
 
-        public Command(Action<object> execute, Func<object, bool> canExecute)
+        public DelegateCommand(Action<object> execute, Func<object, bool> canExecute)
         {
             _execute = execute;
             _canExecute = canExecute;

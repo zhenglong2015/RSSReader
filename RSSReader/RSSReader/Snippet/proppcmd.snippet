@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>proppcmd</Title>
+      <Shortcut>propcmd</Shortcut>
+      <Description>
+        MVVM
+        实现绑定命令的代码段
+      </Description>
+      <Author>Microsoft Corporation</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>type</ID>
+          <ToolTip>属性类型</ToolTip>
+          <Default>DelegateCommand</Default>
+        </Literal>
+        <Literal>
+          <ID>property</ID>
+          <ToolTip>属性名</ToolTip>
+          <Default>MyCommand</Default>
+        </Literal>
+        <Literal>
+          <ID>field</ID>
+          <ToolTip>支持此属性的变量</ToolTip>
+          <Default>_myCommand</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[private $type$ $field$;
+		      /// <summary>
+        	/// $property$
+        	/// </summary>
+                public $type$ $property$ 
+                { 
+                   get
+                    {
+                      return $field$ ?? ($field$ = new DelegateCommand(c =>
+                      {
+                     }));
+                   }
+              }
+$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

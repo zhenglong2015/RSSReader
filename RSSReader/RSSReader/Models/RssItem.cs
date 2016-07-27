@@ -18,20 +18,11 @@ namespace RSSReader.Models
 {
     public class RssItem
     {
-        public RssItem()
-        {
-            ItemClick = new Command(p =>
-            {
-                NavigationWindow window = new NavigationWindow();
-                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                window.ShowsNavigationUI = false;
-                window.NavigationService.Navigate(new Uri("Views/ItemWin.xaml", UriKind.RelativeOrAbsolute), p);
-                window.NavigationService.Navigated += NavigationService_Navigated;
-                window.ShowDialog();
-                window.Close();
-            });
-        }
-
+        /// <summary>
+        /// 将参数加入到App中，在目标页面的load中获取
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NavigationService_Navigated(object sender, NavigationEventArgs e)
         {
             App.Current.Properties["frame"] = e.ExtraData;
@@ -46,7 +37,32 @@ namespace RSSReader.Models
         public string Link { get; set; }
         public string Content { get; set; }
 
-        public Command ItemClick { get; set; }
+        /// <summary>
+        /// 按钮抽象的单机命令
+        /// </summary>
+        public DelegateCommand ItemClick
+        {
+            get
+            {
+                return itemClick ?? (itemClick = new DelegateCommand(p=> {
+                    NavigationWindow window = new NavigationWindow();
+                    window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    window.ShowsNavigationUI = false;
+                    window.NavigationService.Navigate(new Uri("Views/ItemWin.xaml", UriKind.RelativeOrAbsolute), p);
+                    window.NavigationService.Navigated += NavigationService_Navigated;
+                    window.ShowDialog();
+                    window.Close();
+                }));
+            }
+        }
+
+        private DelegateCommand itemClick;
+
+        /// <summary>
+        /// 获取内容
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
         public static async Task<IEnumerable<RssItem>> RssGetItems(string url)
         {
             HttpClient client = new HttpClient();

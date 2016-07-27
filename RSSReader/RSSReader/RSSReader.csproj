@@ -98,6 +98,8 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Snippet\propoc.snippet" />
+    <None Include="Snippet\proppcmd.snippet" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
